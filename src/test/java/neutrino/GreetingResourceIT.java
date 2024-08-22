@@ -3,6 +3,6 @@ package neutrino;
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
 @QuarkusIntegrationTest
-class GreetingIT extends GreetingTest {
+class GreetingResourceIT extends GreetingResourceTest {
     // Execute the same tests but in packaged mode.
 }

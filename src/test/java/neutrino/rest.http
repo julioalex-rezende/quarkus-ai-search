@@ -1,3 +1,34 @@
+
 GET http://localhost:8080/hello
 
 ###
+POST http://localhost:8080/hello/user
+Content-Type: text/plain
+
+John Doe
+
+###
+
+POST http://localhost:8080/search
+Content-Type: application/json
+
+{
+    "query": "query 1",
+    "type": "type 1"
+}
+
+###
+
+POST http://localhost:8080/search
+Content-Type: application/json
+
+{
+  "query": "oelen Tuerscharnier Flex-Manufaktur",
+  "top_k": 5,
+  "type": "NAEL",
+  "retrieval_mode": "text",
+  "module_orgs": "<modulorg1>,<modulorg2>",
+  "derivatives": ["derivative1", "derivative2"],
+  "build_phases": "build phase",
+  "expert_name": "ID12345"
+}
