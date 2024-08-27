@@ -49,6 +49,14 @@ You can run your application in dev mode that enables live coding using:
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
 
+### Calling REST Endpoints
+
+A `test/rest.http` file is included in this repository.
+
+With the application running, you can call the application endpoints with `curl` commands or using the http file for convenience.
+
+![alt text](image-1.png)
+
 ## Packaging and running the application
 
 The application can be packaged using:
