@@ -35,7 +35,7 @@ The file should look like the one below:
 
 By doing that, you can select Debug Mode when running the application, and execution will stop at the breakpoints you add to the code.
 
-![alt text](image.png)
+![alt text](vscode-debug-flow.png)
 
 ## Running the application in dev mode
 
@@ -55,7 +55,7 @@ A `test/rest.http` file is included in this repository.
 
 With the application running, you can call the application endpoints with `curl` commands or using the http file for convenience.
 
-![alt text](image-1.png)
+![alt text](accessing-endpoints.png)
 
 ## Packaging and running the application
 
