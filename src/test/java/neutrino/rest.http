@@ -8,6 +8,12 @@ Content-Type: text/plain
 John Doe
 
 ###
+POST http://localhost:8080/hello
+Content-Type: text/plain
+
+John Doe - No Path
+
+###
 
 POST http://localhost:8080/search
 Content-Type: application/json
@@ -31,4 +37,16 @@ Content-Type: application/json
   "derivatives": ["derivative1", "derivative2"],
   "build_phases": "build phase",
   "expert_name": "ID12345"
+}
+
+###
+POST http://localhost:8080/search
+Content-Type: application/json
+
+{
+  "query": "oelen Tuerscharnier Flex-Manufaktur",
+  "top_k": 5,
+  "type": "NAEL",             
+  "retrieval_mode": "text",   
+  "module_orgs": "<modulorg>"
 }

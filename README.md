@@ -37,6 +37,55 @@ By doing that, you can select Debug Mode when running the application, and execu
 
 ![alt text](vscode-debug-flow.png)
 
+## Setup development environment
+
+This repository uses VSCode [devcontainers](https://code.visualstudio.com/docs/devcontainers/containers) to standardize the development environment.
+Install the [devcontainers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extensions in VSCode, open the
+repository and click on "Open in container..."
+
+## Infrastructure Initialization
+
+First you need to initialize the azd project by running:
+
+```bash
+azd env new cobrasearch
+```
+
+At this point you can either reuse an existing environment, or set up a new one.
+
+### Reusing an existing environment
+
+**You can connect to a shared experiment environment using the following command.**
+
+```bash
+azd env refresh -e cobrasearch
+ # Select an Azure Subscription to use: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ # Select an Azure location to use: YYYYY
+```
+
+### Setting up a new environment
+
+If you are setting up a new environment you can proceed by setting up the infrastructure by running:
+
+```bash
+azd up
+```
+
+When asked for the principal id enter following `principalId` if you are in the BMW environment.
+This id corresponds to a user group available in the BMW Azure tenant.
+
+```bash
+b80bb7ea-4724-4a4e-a7a4-5b2ceee60107
+```
+
+If you are not in the BMW environment, you can use the default `principalId` for MSFT tenants.
+This id corresponds to a user group, `Cobra Asistant` available in the MSFT tenant.
+
+```bash
+46ef6def-8b4b-4d31-92f8-8cc3afc22644
+```
+
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:

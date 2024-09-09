@@ -26,6 +26,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.azure</groupId>
+                <artifactId>azure-sdk-bom</artifactId>
+                <version>1.2.16</version>       <!-- Replace with the latest version if needed -->
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>      
         </dependencies>
     </dependencyManagement>
 
@@ -52,6 +59,29 @@
             <artifactId>rest-assured</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>        <!-- Azure AI Search SDK -->
+            <groupId>com.azure</groupId>
+            <artifactId>azure-search-documents</artifactId>
+        </dependency>
+        <dependency>        <!-- Azure Identity SDK -->
+            <groupId>com.azure</groupId>
+            <artifactId>azure-identity</artifactId>
+        </dependency>
+        <dependency>        <!-- Azure AI OpenAI SDK -->
+            <groupId>com.azure</groupId>
+            <artifactId>azure-ai-openai</artifactId>
+            <version>1.0.0-beta.10</version>
+        </dependency>
+        <dependency>    <!-- Azure Core SDK -->
+            <groupId>com.azure</groupId>
+            <artifactId>azure-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <version>1.18.34</version>
+        </dependency>      
     </dependencies>
 
     <build>
