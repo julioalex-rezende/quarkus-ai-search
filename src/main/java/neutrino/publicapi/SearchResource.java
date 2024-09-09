@@ -7,6 +7,7 @@ import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
+import neutrino.search.CobraSearchClient;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +20,11 @@ import org.slf4j.LoggerFactory;
 public class SearchResource {
 
     private static Logger logger = LoggerFactory.getLogger(SearchResource.class);
+    private CobraSearchClient searchClient;
 
+    public SearchResource() {
+        searchClient = new CobraSearchClient();
+    }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -53,9 +58,11 @@ public class SearchResource {
             .formatted(searchText, indexName, topK, type, moduleOrgs, 
                             derivatives, buildPhases, retrievalMode, expertName);
 
-        // TODO: Implement search logic
-        logger.info(msg);                   
-        return Response.ok(msg).build();
+        logger.info(msg);          
+        
+        var searchResults = searchClient.search(searchText);
+
+        return Response.ok(searchResults).build();
     }
 
     public List<String> getCommaSeparatedParams(Object param) {

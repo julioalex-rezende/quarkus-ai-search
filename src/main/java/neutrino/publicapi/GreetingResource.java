@@ -25,4 +25,13 @@ public class GreetingResource {
         return "Hello from RESTEasy, " + user + "\n";
     }
 
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.TEXT_PLAIN)
+    public String helloUserNoPath(String user) {
+
+        return "Hello from RESTEasy, " + user + "\n";
+    }
+
+
 }
